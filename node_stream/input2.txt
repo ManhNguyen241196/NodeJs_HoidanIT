@@ -1,0 +1,4 @@
+bien nay dk load truoc vì các sự kiện trong node js mac dinh là k dong boWhen converting between Buffers and strings
+, a character encoding may be specified. 
+If no character encoding is specified, 
+UTF-8 will be used as the default.

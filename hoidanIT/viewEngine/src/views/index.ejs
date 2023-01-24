@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Refactoring With Promises</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+    <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="/upLoadFile">UpFile</a>
+
+  </div>
+   
+  <%= dataUsers %>   
+  <div class="w3-container">
+    <h2>List users:</h2>
+  
+    <table class="w3-table-all w3-hoverable">
+      <thead>
+        <tr class="w3-light-grey">
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i=0; i < dataUsers.length ; i++ ){ %>
+          <tr>
+            <td> <%= dataUsers[i].id %></td>
+            <td> <%= dataUsers[i].firstName %></td>
+            <td> <%= dataUsers[i].lastName %></td>
+            <td> 
+              <a href="/detail/user/<%= dataUsers[i].id %>" target="_blank" rel="noopener noreferrer">Detail</a>
+              <form action="/edit-user/<%= dataUsers[i].id %>" method="get">
+                <button type="submit">Edit</button>
+              </form>
+              <form action="/delete-user" method="post">
+                <input name="userId" hidden type="text" value="<%= dataUsers[i].id %>">
+                <button type="submit">Delete</button>
+              </form>
+            </td> 
+          </tr>
+
+        <% } %>
+      </tbody>
+      
+    </table>
+  </div>
+
+  <div class="create-user-container">
+    <div> <b>Create a new user: </b></div>
+
+    <form class="form" action="/create-new-user" method="post">
+      <div class="title">Welcome</div>
+      <div class="subtitle">Let's create your account!</div>
+      <div class="input-container ic1">
+        <input name="firstName" id="firstname" class="input" type="text" placeholder=" " />
+        <div class="cut"></div>
+        <label for="firstname" class="placeholder">First name</label>
+      </div>
+      <div class="input-container ic2">
+        <input  name="lastName" id="lastname" class="input" type="text" placeholder=" " />
+        <div class="cut"></div>
+        <label for="lastname" class="placeholder">Last name</label>
+      </div>
+      <div class="input-container ic2">
+        <input name="email" id="email" class="input" type="email" placeholder=" " />
+        <div class="cut cut-short"></div>
+        <label for="email" class="placeholder">Email</label>
+      </div>
+      <div class="input-container ic2">
+        <input  name="address" id="address" class="input" type="text" placeholder=" " />
+        <div class="cut"></div>
+        <label for="address" class="placeholder">Address</label>
+      </div>
+      <button type="submit" class="submit">Submit</button>
+    </form>
+  </div>
+  <!-- <img src="/img/1.JPG" alt="" srcset=""> -->
+</body>
+
+</html>

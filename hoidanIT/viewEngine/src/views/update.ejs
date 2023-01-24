@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Update user</title>
+  <link rel="stylesheet" href="/css/styles.css">
+ <style>
+    body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+};
+ </style>
+</head>
+      
+ <body>
+    <!-- <%= dataUserEdit %> -->
+    <div class="create-user-container">
+        <div> <b>Update your account! </b></div>
+    
+        <form class="form" action="/update-user" method="post">
+          <div class="title">Welcome</div>
+          <div class="subtitle">Update your account!</div>
+          <div class="input-container ic1">
+            <input name="firstName" id="firstname" class="input" type="text" placeholder=" " value="<%= dataUserEdit.firstName %>"/>
+            <div class="cut"></div>
+            <label for="firstname" class="placeholder">First name</label>
+          </div>
+          <div class="input-container ic2">
+            <input  name="lastName" id="lastname" class="input" type="text" placeholder=" " value="<%= dataUserEdit.lastName %>"/>
+            <div class="cut"></div>
+            <label for="lastname" class="placeholder">Last name</label>
+          </div>
+          <div class="input-container ic2">
+            <input name="email" id="email" class="input" type="email" placeholder=" " value="<%= dataUserEdit.email %>"/>
+            <div class="cut cut-short"></div>
+            <label for="email" class="placeholder">Email</label>
+          </div>
+          <div class="input-container ic2">
+            <input  name="address" id="address" class="input" type="text" placeholder=" " value="<%= dataUserEdit.address %>"/>
+            <div class="cut"></div>
+            <label for="address" class="placeholder">Address</label>
+          </div>
+          <input type="number" value="<%= dataUserEdit.id %>" hidden name="idNum">
+          <button type="submit" class="submit">Update</button>
+        </form>
+      </div>
+
+ </body>
+</html>

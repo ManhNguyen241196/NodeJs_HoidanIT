@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Refactoring With Promises</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+   <style>
+    .btn-save{
+       margin-top: 15px;
+       cursor: pointer; 
+    }
+   </style>
+</head>
+
+<body>
+    <div class="topnav">
+     <a href="#home">Home</a>
+     <a href="#news">News</a>
+     <a href="#contact">Contact</a>
+     <a href="#about">About</a>
+     <a  class="active" href="/upLoadFile">UpFile</a>
+  </div>
+  <div class="upload-file-container">
+     <form action="/upload-profile-pic" method="post"  enctype="multipart/form-data" >
+        <div>
+            <label for="">Avata:</label>
+            <input type="file" name="profile_pic">
+        </div>
+       <div>
+          <button class="btn-save" type="submit"> Save File</button>
+       </div>
+     </form>
+
+     <form method="post" action="/upload-multiple-images" enctype="multipart/form-data">
+        <div>
+            <label>Select multiple images:</label>
+            <!-- input nay là để chọn file từ máy tính vì bình thuwofng input sẽ chỉ là nhập text vào -->
+            <input type="file" name="multiple_images" multiple />   
+        </div>
+        <div>
+         <!-- input này đóng vai trò là btn để đẩy thông tin từ input của form lên server -->
+          <button class="btn-save" type="submit"> Upload </button>
+        </div>
+    </form>
+  </div>
+</body>
+</html>
